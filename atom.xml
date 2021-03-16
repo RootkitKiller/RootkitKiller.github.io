@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rootkitkiller.github.io</id>
     <title>一颗小韭菜</title>
-    <updated>2021-02-26T23:55:49.887Z</updated>
+    <updated>2021-03-16T09:49:44.504Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rootkitkiller.github.io"/>
     <link rel="self" href="https://rootkitkiller.github.io/atom.xml"/>
@@ -11,44 +11,31 @@
     <icon>https://rootkitkiller.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 一颗小韭菜</rights>
     <entry>
-        <title type="html"><![CDATA[测试一篇文章]]></title>
-        <id>https://rootkitkiller.github.io/post/ce-shi-yi-pian-wen-zhang/</id>
-        <link href="https://rootkitkiller.github.io/post/ce-shi-yi-pian-wen-zhang/">
+        <title type="html"><![CDATA[《道德经》中有无的一些思考]]></title>
+        <id>https://rootkitkiller.github.io/post/you-wu/</id>
+        <link href="https://rootkitkiller.github.io/post/you-wu/">
         </link>
-        <updated>2021-02-26T23:55:08.000Z</updated>
-        <content type="html"><![CDATA[<p>这是我的测试</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://rootkitkiller.github.io/post/hello-gridea/</id>
-        <link href="https://rootkitkiller.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <updated>2021-03-15T23:55:08.000Z</updated>
+        <summary type="html"><![CDATA[<p>“有无”问题是老子哲学中的一个基本问题，最近通过旁听了一些关于《道德经》的讲座，然后对这个问题有了一个更加深入的理解。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <content type="html"><![CDATA[<p>“有无”问题是老子哲学中的一个基本问题，最近通过旁听了一些关于《道德经》的讲座，然后对这个问题有了一个更加深入的理解。</p>
 <!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+<blockquote>
+<p>道可道也，非恒道也。名可名也，非恒名也。无名，万物之始也；有名，万物之母也。故恒无欲也，以观其眇；恒有欲也，以观其所徼。两者同出，异名同谓。玄之又玄，众眇之门。——《道德经》第一章</p>
+</blockquote>
+<blockquote>
+<p>有无之相生也，难易之相成也，长短之相刑也，高下之相盈也，音声之相和也，先后之相随，恒也。——《道德经》第二章</p>
+</blockquote>
+<h3 id="不可道之道">不可道之道</h3>
+<p>道可道，非恒道。道是不可诉说的。这里我从有无的方面来说明道的不可诉说。首先“有”表示“肯定”，“肯定”又可以说是“规定”或者“定义”。我们说有一个东西，比如有一个桌子，有一个椅子。这些东西必须是一种存在的，甚至可以被表述的（桌椅不仅仅是一个符号，还是可以规定的，甚至是具象化的）。显而易见，这种“肯定”是有边界的，比如当用语言去肯定一个东西的时候，就会存在语言的边界。所以由于这种边界的存在（这源自于我们自身的局限性），我们不能用语言去定义“道”。</p>
+<h3 id="有无相生">有无相生</h3>
+<p>无表示否定。<code>无名天地之始，有名万物之母</code>，先有“无”还是先有“有”呢？我认为“有无”并无时间上的先后，但是逻辑上是先有的“无”。也就是先有否定，在否定的同时，肯定也就产生了，比如我们对一块木头进行雕刻，当我们用刻刀凿到木头上的时候，就是在对木头进行否定，从而也产生了对某种雕刻形象的肯定。否定产生伴随着肯定的产生，这表示有无相生。但是否定是在先的，这是无名天地之始。</p>
+<h3 id="有为万物之母">有为万物之母</h3>
+<p>如果是说“无”就是否定，儒墨两家的言论代表了一种有限的肯定，当然也就代表了对道之全体的否定。只是片面的言论。在《庄子》中也有<code>道术将为天下裂</code>的表述，意思是诸子百家之言只是道的一部分，都不是道之全体。一家之言就是把有“边界的肯定”施加到道之全体上，这是有名万物之母。</p>
+<h3 id="有无和道">有无和道</h3>
+<p>道通过有和无来表现自身。如何体认道？通过无（否定），体会道的始物之妙，这是常无欲，以观其妙。通过有（肯定），体认万物的局限，透过这种局限或者边界去体会道。这是常有欲，以观其徼。</p>
+<h3 id="玄">玄</h3>
+<p>有和无，即肯定和否定，是相生共存的，可以把他们称作玄。但是有和无的综合（即玄）并不是道本身，它们也来自于道，道是玄的否定，是一个圆融、无限、无名的存在。</p>
 ]]></content>
     </entry>
 </feed>
