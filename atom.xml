@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rootkitkiller.github.io</id>
-    <title>一颗小韭菜</title>
-    <updated>2021-03-16T10:04:06.656Z</updated>
+    <title>小韭菜</title>
+    <updated>2021-03-16T10:04:58.143Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rootkitkiller.github.io"/>
     <link rel="self" href="https://rootkitkiller.github.io/atom.xml"/>
-    <subtitle>coding、bitcoin</subtitle>
+    <subtitle>coding、bitcoin、哲学</subtitle>
     <logo>https://rootkitkiller.github.io/images/avatar.png</logo>
     <icon>https://rootkitkiller.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, 一颗小韭菜</rights>
+    <rights>All rights reserved 2021, 小韭菜</rights>
     <entry>
         <title type="html"><![CDATA[《道德经》中有无的一些思考]]></title>
-        <id>https://rootkitkiller.github.io/post/you-wu/</id>
-        <link href="https://rootkitkiller.github.io/post/you-wu/">
+        <id>https://rootkitkiller.github.io/you-wu/</id>
+        <link href="https://rootkitkiller.github.io/you-wu/">
         </link>
         <updated>2021-03-15T23:55:08.000Z</updated>
         <summary type="html"><![CDATA[<p>“有无”问题是老子哲学中的一个基本问题，最近通过旁听了一些关于《道德经》的讲座，然后对这个问题有了一个更加深入的理解。</p>
