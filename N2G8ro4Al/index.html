@@ -6,7 +6,7 @@
 
 <title>从零开始启动EOSIO（一） | 韭菜</title>
 
-<link rel="shortcut icon" href="https://rootkitkiller.github.io/favicon.ico?v=1615993692318">
+<link rel="shortcut icon" href="https://rootkitkiller.github.io/favicon.ico?v=1615993903242">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://rootkitkiller.github.io/styles/main.css">
@@ -179,7 +179,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1615993692318"
+            <form id="gridea-search-form" style="position: relative" data-update="1615993903242"
                 action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
@@ -364,6 +364,44 @@ info  2021-03-17T15:00:31.402 thread-0  producer_plugin.cpp:2224      produce_bl
 info  2021-03-17T15:00:31.902 thread-0  producer_plugin.cpp:2224      produce_block        ] Produced block 8fe5493dedc69ab9... #5 @ 2021-03-17T15:00:32.000 signed by eosio [trxs: 0, lib: 4, confirmed: 0]
 info  2021-03-17T15:00:32.401 thread-0  producer_plugin.cpp:2224      produce_block        ] Produced block 4c22df63112035f2... #6 @ 2021-03-17T15:00:32.500 signed by eosio [trxs: 0, lib: 5, confirmed: 0]
 info  2021-03-17T15:00:32.901 thread-0  producer_plugin.cpp:2224      produce_block        ] Produced block 1e4753db203a406e... #7 @ 2021-03-17T15:00:33.000 signed by eosio [trxs: 0, lib: 6, confirmed: 0]
+</code></pre>
+<h2 id="正确的目录结构">正确的目录结构</h2>
+<pre><code>biosboot
+├── genesis
+│   ├── blockchain
+│   │   ├── config
+│   │   │   ├── config.ini
+│   │   │   └── protocol_features
+│   │   │       ├── BUILTIN-DISALLOW_EMPTY_PRODUCER_SCHEDULE.json
+│   │   │       ├── BUILTIN-FIX_LINKAUTH_RESTRICTION.json
+│   │   │       ├── BUILTIN-FORWARD_SETCODE.json
+│   │   │       ├── BUILTIN-GET_SENDER.json
+│   │   │       ├── BUILTIN-NO_DUPLICATE_DEFERRED_ID.json
+│   │   │       ├── BUILTIN-ONLY_BILL_FIRST_AUTHORIZER.json
+│   │   │       ├── BUILTIN-ONLY_LINK_TO_EXISTING_PERMISSION.json
+│   │   │       ├── BUILTIN-PREACTIVATE_FEATURE.json
+│   │   │       ├── BUILTIN-RAM_RESTRICTIONS.json
+│   │   │       ├── BUILTIN-REPLACE_DEFERRED.json
+│   │   │       ├── BUILTIN-RESTRICT_ACTION_TO_SELF.json
+│   │   │       ├── BUILTIN-WEBAUTHN_KEY.json
+│   │   │       └── BUILTIN-WTMSIG_BLOCK_SIGNATURES.json
+│   │   ├── data
+│   │   │   ├── blockchain
+│   │   │   │   └── blocks
+│   │   │   │       ├── blocks.index
+│   │   │   │       ├── blocks.log
+│   │   │   │       └── reversible
+│   │   │   │           └── shared_memory.bin
+│   │   │   ├── snapshots
+│   │   │   └── state
+│   │   │       ├── fork_db.dat
+│   │   │       └── shared_memory.bin
+│   │   └── nodeos.log
+│   ├── genesis_start.sh
+│   └── stop.sh
+└── genesis.json
+
+10 directories, 23 files
 </code></pre>
 
                 </div>
