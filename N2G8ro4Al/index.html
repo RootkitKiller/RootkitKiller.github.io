@@ -6,7 +6,7 @@
 
 <title>从零开始启动EOSIO（一） | 韭菜</title>
 
-<link rel="shortcut icon" href="https://rootkitkiller.github.io/favicon.ico?v=1615993986269">
+<link rel="shortcut icon" href="https://rootkitkiller.github.io/favicon.ico?v=1615996642969">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://rootkitkiller.github.io/styles/main.css">
@@ -179,7 +179,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1615993986269"
+            <form id="gridea-search-form" style="position: relative" data-update="1615996642969"
                 action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
@@ -243,7 +243,7 @@ brew install eosio.cdt
 <li>在当前目录创建一个钱包，需要注意：输出结果中会有钱包密钥，请把它保存下来</li>
 </ul>
 <pre><code class="language-sh">cleos wallet create --to-console
-# 例如我的钱包解锁密码为`PW5J5gP8Foi1eZjEiZdEX4KpqEcK1Prvuiveo5n9oX6Gnp7c5ezip`
+# 例如我的钱包解锁密码为PW5J5gP8Foi1eZjEiZdEX4KpqEcK1Prvuiveo5n9oX6Gnp7c5ezip
 </code></pre>
 <ul>
 <li>将开发账户eosio的私钥导入到钱包中，密钥是固定的</li>
@@ -269,7 +269,7 @@ biosboot
 └── genesis
 </code></pre>
 <ul>
-<li>在<code>biosboot/</code>目录下创建一个<code>genesis.json</code>文件，内容如下：</li>
+<li>在<code>biosboot/</code>目录下创建一个<code>genesis.json</code>文件，内容如下</li>
 </ul>
 <pre><code class="language-json">{
   &quot;initial_timestamp&quot;: &quot;2018-12-05T08:55:11.000&quot;,
@@ -297,7 +297,7 @@ biosboot
 }
 </code></pre>
 <ul>
-<li>在<code>genesis</code>目录下创建启动脚本<code>genesis_start.sh</code>，内容如下，
+<li>在<code>genesis</code>目录下创建启动脚本<code>genesis_start.sh</code>，内容如下
 <ul>
 <li><strong>替换EOS_PUB_DEV_KEY和EOS_PRIV_DEV_KEY为之前创建的生产者密钥对</strong></li>
 </ul>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rootkitkiller.github.io</id>
     <title>韭菜</title>
-    <updated>2021-03-17T15:13:08.550Z</updated>
+    <updated>2021-03-17T15:57:26.507Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rootkitkiller.github.io"/>
     <link rel="self" href="https://rootkitkiller.github.io/atom.xml"/>
@@ -40,7 +40,7 @@ brew install eosio.cdt
 <li>在当前目录创建一个钱包，需要注意：输出结果中会有钱包密钥，请把它保存下来</li>
 </ul>
 <pre><code class="language-sh">cleos wallet create --to-console
-# 例如我的钱包解锁密码为`PW5J5gP8Foi1eZjEiZdEX4KpqEcK1Prvuiveo5n9oX6Gnp7c5ezip`
+# 例如我的钱包解锁密码为PW5J5gP8Foi1eZjEiZdEX4KpqEcK1Prvuiveo5n9oX6Gnp7c5ezip
 </code></pre>
 <ul>
 <li>将开发账户eosio的私钥导入到钱包中，密钥是固定的</li>
@@ -66,7 +66,7 @@ biosboot
 └── genesis
 </code></pre>
 <ul>
-<li>在<code>biosboot/</code>目录下创建一个<code>genesis.json</code>文件，内容如下：</li>
+<li>在<code>biosboot/</code>目录下创建一个<code>genesis.json</code>文件，内容如下</li>
 </ul>
 <pre><code class="language-json">{
   &quot;initial_timestamp&quot;: &quot;2018-12-05T08:55:11.000&quot;,
@@ -94,7 +94,7 @@ biosboot
 }
 </code></pre>
 <ul>
-<li>在<code>genesis</code>目录下创建启动脚本<code>genesis_start.sh</code>，内容如下，
+<li>在<code>genesis</code>目录下创建启动脚本<code>genesis_start.sh</code>，内容如下
 <ul>
 <li><strong>替换EOS_PUB_DEV_KEY和EOS_PRIV_DEV_KEY为之前创建的生产者密钥对</strong></li>
 </ul>
