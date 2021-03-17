@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rootkitkiller.github.io</id>
     <title>韭菜</title>
-    <updated>2021-03-17T15:59:20.970Z</updated>
+    <updated>2021-03-17T16:00:48.996Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rootkitkiller.github.io"/>
     <link rel="self" href="https://rootkitkiller.github.io/atom.xml"/>
@@ -24,16 +24,19 @@
 <li>系统：MacOS</li>
 </ul>
 <h1 id="安装">安装</h1>
-<h2 id="安装eosio">安装EOSIO</h2>
+<ul>
+<li>安装EOSIO</li>
+</ul>
 <pre><code class="language-sh">brew tap eosio/eosio
 brew install eosio
 </code></pre>
-<h2 id="安装eosiocdt">安装EOSIO.CDT</h2>
+<ul>
+<li>安装EOSIO.CDT</li>
+</ul>
 <pre><code class="language-sh">brew tap eosio/eosio.cdt
 brew install eosio.cdt
 </code></pre>
-<h1 id="启动">启动</h1>
-<h2 id="背景-2">背景</h2>
+<h2 id="启动背景">启动背景</h2>
 <p>在启动EOSIO网络之前，我们需要知道，EOSIO每条链都默认了一个eosio账户，这个账户称为开发账户，这个账户用来签署系统合约</p>
 <h2 id="配置cleos钱包">配置cleos钱包</h2>
 <ul>
