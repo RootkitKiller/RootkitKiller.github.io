@@ -1,0 +1,446 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>从零开始启动EOSIO（一） | 韭菜</title>
+
+<link rel="shortcut icon" href="https://rootkitkiller.github.io/favicon.ico?v=1615993692318">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://rootkitkiller.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<style>
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <style>
+    /* 导航栏样式 */
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        text-decoration: none;
+    }
+
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:focus {
+        text-decoration: none;
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .navbar-expand-lg .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+        }
+
+        .navbar-expand-lg .navbar-toggler {
+            display: none;
+        }
+    }
+
+    @media (max-width: 991px) {
+        #navbarSupportedContent {
+            display: none;
+        }
+    }
+</style>
+<nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            韭菜
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1615993692318"
+                action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function () {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    从零开始启动EOSIO（一）
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-03-17 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="背景">背景</h1>
+<ul>
+<li>EOSIO版本：EOSIO2.0</li>
+<li>参考教程：<a href="https://developers.eos.io/welcome/latest/tutorials/bios-boot-sequence">https://developers.eos.io/welcome/latest/tutorials/bios-boot-sequence</a></li>
+<li>有效时间：2020.3.17</li>
+<li>系统：MacOS</li>
+</ul>
+<h1 id="安装">安装</h1>
+<h2 id="安装eosio">安装EOSIO</h2>
+<pre><code class="language-sh">brew tap eosio/eosio
+brew install eosio
+</code></pre>
+<h2 id="安装eosiocdt">安装EOSIO.CDT</h2>
+<pre><code class="language-sh">brew tap eosio/eosio.cdt
+brew install eosio.cdt
+</code></pre>
+<h1 id="启动">启动</h1>
+<h2 id="背景-2">背景</h2>
+<p>在启动EOSIO网络之前，我们需要知道，EOSIO每条链都默认了一个eosio账户，这个账户称为开发账户，这个账户用来签署系统合约</p>
+<h2 id="配置cleos钱包">配置cleos钱包</h2>
+<ul>
+<li>在当前目录创建一个钱包，需要注意：输出结果中会有钱包密钥，请把它保存下来</li>
+</ul>
+<pre><code class="language-sh">cleos wallet create --to-console
+# 例如我的钱包解锁密码为`PW5J5gP8Foi1eZjEiZdEX4KpqEcK1Prvuiveo5n9oX6Gnp7c5ezip`
+</code></pre>
+<ul>
+<li>将开发账户eosio的私钥导入到钱包中，密钥是固定的</li>
+</ul>
+<pre><code class="language-sh">cleos wallet import
+5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+</code></pre>
+<ul>
+<li>再生成一堆密钥，用来配置区块生产者（需要注意：生产者密钥不能与Owner密钥相同，即不能使用默认的eosio私钥）</li>
+</ul>
+<pre><code class="language-sh">cleos create key --to-console
+# 将生成的生产者密钥保存下来，例如我的输出结果是
+# Private key: 5JVHHGPPA7P4A9NQ49iWSoBbEiZXo52g7yUaSkdnXJp7jCYZinH
+# Public key: EOS7KuvQBMyadqWcewxdjbQR5BJszD41Go4Y6Zy9yDJYoTRtzM76v
+</code></pre>
+<h2 id="配置keosd节点并启动">配置keosd节点并启动</h2>
+<h3 id="创建默认配置文件">创建默认配置文件</h3>
+<ul>
+<li>创建<code>biosboot/genesis</code>目录</li>
+</ul>
+<pre><code class="language-sh"># 目录结构如图
+biosboot
+└── genesis
+</code></pre>
+<ul>
+<li>在<code>biosboot/</code>目录下创建一个<code>genesis.json</code>文件，内容如下：</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;initial_timestamp&quot;: &quot;2018-12-05T08:55:11.000&quot;,
+  &quot;initial_key&quot;: &quot;EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV&quot;,
+  &quot;initial_configuration&quot;: {
+    &quot;max_block_net_usage&quot;: 1048576,
+    &quot;target_block_net_usage_pct&quot;: 1000,
+    &quot;max_transaction_net_usage&quot;: 524288,
+    &quot;base_per_transaction_net_usage&quot;: 12,
+    &quot;net_usage_leeway&quot;: 500,
+    &quot;context_free_discount_net_usage_num&quot;: 20,
+    &quot;context_free_discount_net_usage_den&quot;: 100,
+    &quot;max_block_cpu_usage&quot;: 100000,
+    &quot;target_block_cpu_usage_pct&quot;: 500,
+    &quot;max_transaction_cpu_usage&quot;: 50000,
+    &quot;min_transaction_cpu_usage&quot;: 100,
+    &quot;max_transaction_lifetime&quot;: 3600,
+    &quot;deferred_trx_expiration_window&quot;: 600,
+    &quot;max_transaction_delay&quot;: 3888000,
+    &quot;max_inline_action_size&quot;: 4096,
+    &quot;max_inline_action_depth&quot;: 4,
+    &quot;max_authority_depth&quot;: 6
+  },
+  &quot;initial_chain_id&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;
+}
+</code></pre>
+<ul>
+<li>在<code>genesis</code>目录下创建启动脚本<code>genesis_start.sh</code>，内容如下，
+<ul>
+<li><strong>替换EOS_PUB_DEV_KEY和EOS_PRIV_DEV_KEY为之前创建的生产者密钥对</strong></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sh">#!/bin/bash
+DATADIR=&quot;./blockchain&quot;
+
+if [ ! -d $DATADIR ]; then
+  mkdir -p $DATADIR;
+fi
+
+nodeos \
+--genesis-json $DATADIR&quot;/../../genesis.json&quot; \
+--signature-provider EOS_PUB_DEV_KEY=KEY:EOS_PRIV_DEV_KEY \
+--private-key '[&quot;EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV&quot;,&quot;5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3&quot; ]' \
+--plugin eosio::producer_plugin \
+--plugin eosio::producer_api_plugin \
+--plugin eosio::chain_plugin \
+--plugin eosio::chain_api_plugin \
+--plugin eosio::http_plugin \
+--plugin eosio::history_api_plugin \
+--plugin eosio::history_plugin \
+--data-dir $DATADIR&quot;/data&quot; \
+--blocks-dir $DATADIR&quot;/blocks&quot; \
+--config-dir $DATADIR&quot;/config&quot; \
+--producer-name eosio \
+--http-server-address 127.0.0.1:8888 \
+--p2p-listen-endpoint 127.0.0.1:9010 \
+--access-control-allow-origin=* \
+--contracts-console \
+--http-validate-host=false \
+--verbose-http-errors \
+--enable-stale-production \
+--p2p-peer-address localhost:9011 \
+--p2p-peer-address localhost:9012 \
+--p2p-peer-address localhost:9013 \
+&gt;&gt; $DATADIR&quot;/nodeos.log&quot; 2&gt;&amp;1 &amp; \
+echo $! &gt; $DATADIR&quot;/eosd.pid&quot;
+</code></pre>
+<ul>
+<li>在<code>genesis</code>目录下创建启动脚本<code>stop.sh</code>，内容如下</li>
+</ul>
+<pre><code class="language-sh">#!/bin/bash
+DATADIR=&quot;./blockchain/&quot;
+
+if [ -f $DATADIR&quot;/eosd.pid&quot; ]; then
+pid=`cat $DATADIR&quot;/eosd.pid&quot;`
+echo $pid
+kill $pid
+rm -r $DATADIR&quot;/eosd.pid&quot;
+echo -ne &quot;Stoping Node&quot;
+while true; do
+[ ! -d &quot;/proc/$pid/fd&quot; ] &amp;&amp; break
+echo -ne &quot;.&quot;
+sleep 1
+done
+echo -ne &quot;\rNode Stopped. \n&quot;
+fi
+</code></pre>
+<h2 id="启动网络查看日志">启动网络查看日志</h2>
+<pre><code class="language-sh">## 启动节点
+sh genesis_start.sh
+## 查看日志
+tail -f blockchain/nodeos.log
+</code></pre>
+<h2 id="正确的日志输出">正确的日志输出</h2>
+<pre><code class="language-sh">info  2021-03-17T15:00:30.481 thread-1  net_plugin.cpp:982            _close               ] closing 'localhost:9011', localhost:9011
+info  2021-03-17T15:00:30.481 thread-2  net_plugin.cpp:982            _close               ] closing 'localhost:9013', localhost:9013
+info  2021-03-17T15:00:30.901 thread-0  producer_plugin.cpp:2224      produce_block        ] Produced block 97ce442a6d8a489f... #3 @ 2021-03-17T15:00:31.000 signed by eosio [trxs: 0, lib: 2, confirmed: 0]
+info  2021-03-17T15:00:31.402 thread-0  producer_plugin.cpp:2224      produce_block        ] Produced block 073ddfbf0e1e57be... #4 @ 2021-03-17T15:00:31.500 signed by eosio [trxs: 0, lib: 3, confirmed: 0]
+info  2021-03-17T15:00:31.902 thread-0  producer_plugin.cpp:2224      produce_block        ] Produced block 8fe5493dedc69ab9... #5 @ 2021-03-17T15:00:32.000 signed by eosio [trxs: 0, lib: 4, confirmed: 0]
+info  2021-03-17T15:00:32.401 thread-0  producer_plugin.cpp:2224      produce_block        ] Produced block 4c22df63112035f2... #6 @ 2021-03-17T15:00:32.500 signed by eosio [trxs: 0, lib: 5, confirmed: 0]
+info  2021-03-17T15:00:32.901 thread-0  producer_plugin.cpp:2224      produce_block        ] Produced block 1e4753db203a406e... #7 @ 2021-03-17T15:00:33.000 signed by eosio [trxs: 0, lib: 6, confirmed: 0]
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+
+        
+            <span id="/N2G8ro4Al//" class="leancloud_visitors" data-flag-title="从零开始启动EOSIO（一）">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: 'wavatar',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: true,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">coding、bitcoin</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/rootkitkiller" target="_blank">RootkitKiller</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://rootkitkiller.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
